@@ -37,7 +37,7 @@ namespace TGC.Group {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Grupo 99")]
+        [global::System.Configuration.DefaultSettingValueAttribute("EjemploRename")]
         public string Name {
             get {
                 return ((string)(this["Name"]));
@@ -49,7 +49,7 @@ namespace TGC.Group {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Mi idea - Descripción de la idea")]
+        [global::System.Configuration.DefaultSettingValueAttribute("SurvivalCraft - EjemploRename que elijio SurvivalCraft.")]
         public string Description {
             get {
                 return ((string)(this["Description"]));
@@ -92,6 +92,18 @@ namespace TGC.Group {
             }
             set {
                 this["TexturaCaja"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Una propiedad para ser utilizada dentro del codigo y que quiero configurar.")]
+        public string PropiedadCustom {
+            get {
+                return ((string)(this["PropiedadCustom"]));
+            }
+            set {
+                this["PropiedadCustom"] = value;
             }
         }
     }
