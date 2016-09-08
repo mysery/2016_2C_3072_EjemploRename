@@ -42,8 +42,10 @@ namespace TGC.Group.Model
         /// </summary>
         public override void Init()
         {
-            //physicsExample = new HelloWorldBullet();
-            physicsExample = new HelloWorldBullet2();
+            physicsExample = new HelloWorldBullet();
+            //physicsExample = new HelloWorldBullet2();
+            //physicsExample = new WallBullet();
+            
             physicsExample.Init(this);
             Camara = new TgcRotationalCamera(new Vector3(0, 20, 0), 100, Input);
         }

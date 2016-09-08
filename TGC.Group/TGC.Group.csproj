@@ -92,6 +92,7 @@
     </Compile>
     <Compile Include="Model\GameModel.cs" />
     <Compile Include="Model\TgcRotationalCamera.cs" />
+    <Compile Include="Physics\WallBullet.cs" />
     <Compile Include="Physics\HelloWorldBullet2.cs" />
     <Compile Include="Physics\PhysicsGame.cs" />
     <Compile Include="Physics\HelloWorldBullet.cs" />

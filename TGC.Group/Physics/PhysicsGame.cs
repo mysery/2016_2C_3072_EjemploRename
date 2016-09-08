@@ -51,7 +51,11 @@ namespace TGC.Group.Physics
             //Podriamos no calcular la inercia para que no rote, pero es correcto que rote tambien.
             var ballLocalInertia = ballShape.CalculateLocalInertia(mass);
             var ballInfo = new RigidBodyConstructionInfo(1, ballMotionState, ballShape, ballLocalInertia);
-            return new RigidBody(ballInfo);
+            var ballBody = new RigidBody(ballInfo);
+            ballBody.LinearFactor = new Vector(1, 1, 1).ToBsVector;
+            ballBody.SetDamping(0.1f, 0.5f);
+            ballBody.Restitution = 0.5f;            
+            return ballBody;
         }        
 
         public RigidBody CreateBox(float size, float mass, float x, float y, float z, float yaw, float pitch, float roll)
@@ -64,7 +68,11 @@ namespace TGC.Group.Physics
             //Es importante calcular la inercia caso contrario el objeto no rotara.
             var boxLocalInertia = boxShape.CalculateLocalInertia(mass);
             var boxInfo = new RigidBodyConstructionInfo(1f, boxMotionState, boxShape, boxLocalInertia);
-            return new RigidBody(boxInfo);
+            var boxBody = new RigidBody(boxInfo);
+            boxBody.LinearFactor = new Vector(1, 1, 1).ToBsVector;
+            //boxBody.SetDamping(0.7f, 0.9f);
+            //boxBody.Restitution = 1f;
+            return boxBody;
         }
 
     }
