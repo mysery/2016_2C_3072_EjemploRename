@@ -98,6 +98,32 @@ namespace TGC.Group.Physics
                 dynamicsWorld.AddRigidBody(ballBody);
             }
 
+            if (Ctx.Input.keyUp(Key.Q))
+            {
+                var ballBody = this.CreateBall(10f, 10f, Ctx.Camara.Position.X, Ctx.Camara.Position.Y, Ctx.Camara.Position.Z);
+                var dir = new Vector(Ctx.Camara.LookAt.X - Ctx.Camara.Position.X, Ctx.Camara.LookAt.Y - Ctx.Camara.Position.Y, Ctx.Camara.LookAt.Z - Ctx.Camara.Position.Z).ToBsVector;
+                dir.Normalize();
+                ballBody.LinearVelocity = dir * 250;
+                ballBody.LinearFactor = new Vector(1, 1, 1).ToBsVector;
+                ballBody.SetDamping(0.1f, 0.5f);
+                ballBody.Restitution = 0.5f;
+                ballBodys.Add(ballBody);
+                dynamicsWorld.AddRigidBody(ballBody);
+            }
+
+            if (Ctx.Input.keyUp(Key.W))
+            {
+                var ballBody = this.CreateBall(10f, 0.1f, Ctx.Camara.Position.X, Ctx.Camara.Position.Y, Ctx.Camara.Position.Z);
+                var dir = new Vector(Ctx.Camara.LookAt.X - Ctx.Camara.Position.X, Ctx.Camara.LookAt.Y - Ctx.Camara.Position.Y, Ctx.Camara.LookAt.Z - Ctx.Camara.Position.Z).ToBsVector;
+                dir.Normalize();
+                ballBody.LinearVelocity = dir * 250;
+                ballBody.LinearFactor = new Vector(1, 1, 1).ToBsVector;
+                ballBody.SetDamping(0.1f, 0.1f);
+                ballBody.Restitution = 0.9f;
+                ballBodys.Add(ballBody);
+                dynamicsWorld.AddRigidBody(ballBody);
+            }
+
         }
 
         /// <summary>
